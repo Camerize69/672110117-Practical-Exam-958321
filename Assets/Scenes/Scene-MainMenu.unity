@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 327421480}
         m_TargetAssemblyTypeName: parith.GameDev3.Chapter6.GameAppFlowButtons, Assembly-CSharp
-        m_MethodName: LoadOptionsScene
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
