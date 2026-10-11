@@ -1189,50 +1189,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091109364}
   m_CullTransparentMesh: 1
---- !u!1 &1104340039
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1104340041}
-  - component: {fileID: 1104340040}
-  m_Layer: 0
-  m_Name: GameAppFlowManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1104340040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104340039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 011adfcd99ddd5e47b8b4448b3618d43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::parith.GameDev3.Chapter6.GameAppFlowManager
---- !u!4 &1104340041
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104340039}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.35109, y: -0, z: 11.78393}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377284740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,8 +1272,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1104340040}
-        m_TargetAssemblyTypeName: parith.GameDev3.Chapter6.GameAppFlowManager, Assembly-CSharp
+      - m_Target: {fileID: 327421480}
+        m_TargetAssemblyTypeName: parith.GameAppFlowButtons, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -2184,8 +2140,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 330585546}
-  - {fileID: 1104340041}
-  - {fileID: 327421481}
   - {fileID: 202456408}
+  - {fileID: 330585546}
+  - {fileID: 327421481}
   - {fileID: 940161007}
