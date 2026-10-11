@@ -1,12 +1,25 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-namespace parith.GameDev3.Chapter6
+namespace parith
 {
     public class GameAppFlowButtons : MonoBehaviour
     {
+        private Scene _prevScene;
+
+        private void Start()
+        {
+            _prevScene = SceneManager.GetActiveScene();
+        }
+        
         public void LoadScene(string sceneName)
         {
             GameAppFlowManager.Instance.LoadScene(sceneName);
+        }
+
+        public void LoadPreviousScene()
+        {
+            GameAppFlowManager.Instance.LoadScene(_prevScene.name);
         }
 
         public void LoadOptionsScene(string optionSceneName)

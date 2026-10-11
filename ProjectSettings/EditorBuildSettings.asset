@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene-Credits.unity
     guid: f00f189a232022f478c30fccd94fdecc
   - enabled: 1
-    path: Assets/Scenes/Scene-WinScreen.unity
+    path: Assets/Scenes/Scene-GameOver-Lose.unity
     guid: 6a41052d4a6cb444fa92fa6fd41927ec
   - enabled: 1
     path: Assets/Scenes/Scene-LoseScreen.unity

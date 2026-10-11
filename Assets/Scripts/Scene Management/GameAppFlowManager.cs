@@ -1,15 +1,22 @@
 using System;
+using TMPro;
+using Unity.Loading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace parith.GameDev3.Chapter6
+namespace parith
 {
     public class GameAppFlowManager : Singleton<GameAppFlowManager>
     {
         protected static bool IsSceneOptionsLoaded;
+        private ScoreManager _scoreManager;
+        private TextMeshProUGUI _scoreText;
+        private float score;
 
         public void LoadScene(string sceneName)
         {
+            _scoreManager = FindAnyObjectByType<ScoreManager>();
+            if (_scoreManager != null) { score = _scoreManager.GetScore(); }
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
 
@@ -41,6 +48,11 @@ namespace parith.GameDev3.Chapter6
             }
         }
 
+        private void OnSceneLoaded()
+        {
+            
+        }
+
         public void ExitGame()
         {
             Application.Quit();
@@ -62,6 +74,24 @@ namespace parith.GameDev3.Chapter6
 
         private void SceneUnloadEventHandler(Scene scene)
         {
+            if (scene.name == "Scene-GameOver-Win" || scene.name == "Scene-GameOver-Lose")
+            {
+                GameObject scoreObject = GameObject.Find("Text-FinalScore");
+
+                if (scoreObject != null)
+                {
+                    _scoreText = scoreObject.GetComponent<TextMeshProUGUI>();
+
+                    if (_scoreText != null)
+                    {
+                        _scoreText.text = "Score: " + score.ToString();
+                    }
+                }
+                else
+                {
+                    Debug.LogError("Text-FinalScore was not found in the Game Over scene!");
+                }
+            }
         }
 
         private void SceneLoadedEventHandler(Scene scene, LoadSceneMode mode)

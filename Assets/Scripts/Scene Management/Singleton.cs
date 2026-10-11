@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace parith.GameDev3.Chapter6
+namespace parith
 {
     public class Singleton<T> : MonoBehaviour where T : Component
     {
