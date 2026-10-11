@@ -20,6 +20,7 @@ namespace parith
             if (_scoreManager != null) { score = _scoreManager.GetScore(); }
 
             _prevSceneName = SceneManager.GetActiveScene().name;
+
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
 

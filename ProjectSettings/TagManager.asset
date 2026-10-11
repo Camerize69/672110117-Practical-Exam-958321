@@ -9,6 +9,7 @@ TagManager:
   - ItemTime-
   - ItemScore+
   - ItemScore-
+  - KillBox
   layers:
   - Default
   - TransparentFX

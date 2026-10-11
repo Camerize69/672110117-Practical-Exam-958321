@@ -26,7 +26,7 @@ namespace parith
 
         private void CheckWinCondition()
         {
-            if (_time <= 0)
+            if (_time <= 1)
             {
                 if (_scoreManager.GetScore() >= 10000)
                 {

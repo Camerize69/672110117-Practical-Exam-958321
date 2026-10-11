@@ -6,6 +6,12 @@ namespace parith
     {
         [SerializeField] private ScoreManager _scoreManager;
         [SerializeField] private Timer _timer;
+        private GameAppFlowManager _gameManager;
+
+        private void Start()
+        {
+            _gameManager = GameAppFlowManager.Instance;
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -28,6 +34,10 @@ namespace parith
                 case "ItemScore-":
                     _scoreManager.DeductScore(500);
                     Destroy(other.gameObject);
+                    break;
+
+                case "KillBox":
+                    _gameManager.LoadScene("Scene-GameOver-Lose");
                     break;
             }
         }
