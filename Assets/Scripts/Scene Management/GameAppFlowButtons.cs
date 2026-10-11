@@ -5,13 +5,6 @@ namespace parith
 {
     public class GameAppFlowButtons : MonoBehaviour
     {
-        private Scene _prevScene;
-
-        private void Start()
-        {
-            _prevScene = SceneManager.GetActiveScene();
-        }
-        
         public void LoadScene(string sceneName)
         {
             GameAppFlowManager.Instance.LoadScene(sceneName);
@@ -19,7 +12,7 @@ namespace parith
 
         public void LoadPreviousScene()
         {
-            GameAppFlowManager.Instance.LoadScene(_prevScene.name);
+            GameAppFlowManager.Instance.LoadPreviousScene();
         }
 
         public void LoadOptionsScene(string optionSceneName)

@@ -11,12 +11,15 @@ namespace parith
         protected static bool IsSceneOptionsLoaded;
         private ScoreManager _scoreManager;
         private TextMeshProUGUI _scoreText;
+        private string _prevSceneName;
         private float score;
 
         public void LoadScene(string sceneName)
         {
             _scoreManager = FindAnyObjectByType<ScoreManager>();
             if (_scoreManager != null) { score = _scoreManager.GetScore(); }
+
+            _prevSceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         }
 
@@ -28,6 +31,11 @@ namespace parith
         public void LoadSceneAdditive(string sceneName)
         {
             SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        }
+
+        public void LoadPreviousScene()
+        {
+            SceneManager.LoadScene(_prevSceneName, LoadSceneMode.Single);
         }
 
         public void LoadOptionsScene(string optionSceneName)
@@ -46,11 +54,6 @@ namespace parith
                 SceneManager.UnloadSceneAsync(optionSceneName);
                 IsSceneOptionsLoaded = false;
             }
-        }
-
-        private void OnSceneLoaded()
-        {
-            
         }
 
         public void ExitGame()
@@ -74,6 +77,16 @@ namespace parith
 
         private void SceneUnloadEventHandler(Scene scene)
         {
+        }
+
+        private void SceneLoadedEventHandler(Scene scene, LoadSceneMode mode)
+        {
+            //If the loaded scene is not the SceneOptions , set flag IsOptionsLoaded to false
+            if (scene.name.CompareTo("SceneOptions") != 0)
+            {
+                // IsSceneOptionsLoaded = false;
+            }
+
             if (scene.name == "Scene-GameOver-Win" || scene.name == "Scene-GameOver-Lose")
             {
                 GameObject scoreObject = GameObject.Find("Text-FinalScore");
@@ -91,16 +104,6 @@ namespace parith
                 {
                     Debug.LogError("Text-FinalScore was not found in the Game Over scene!");
                 }
-            }
-        }
-
-        private void SceneLoadedEventHandler(Scene scene, LoadSceneMode mode)
-        {
-//If the loaded scene is not the SceneOptions , set flag IsOptionsLoaded to false
-//
-            if (scene.name.CompareTo("SceneOptions") != 0)
-            {
-                // IsSceneOptionsLoaded = false;
             }
         }
 
