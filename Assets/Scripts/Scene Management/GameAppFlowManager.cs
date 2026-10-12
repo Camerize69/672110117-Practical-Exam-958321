@@ -1,13 +1,19 @@
 using System;
 using TMPro;
-using Unity.Loading;
+using Unity.Audio;
+using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 namespace parith
 {
     public class GameAppFlowManager : Singleton<GameAppFlowManager>
     {
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] public AudioClip _bgmMenu;
+        [SerializeField] public AudioClip _bgmStage1;
+        [SerializeField] public AudioClip _bgmStage2;
         protected static bool IsSceneOptionsLoaded;
         private ScoreManager _scoreManager;
         private TextMeshProUGUI _scoreText;
@@ -105,6 +111,34 @@ namespace parith
                 {
                     Debug.LogError("Text-FinalScore was not found in the Game Over scene!");
                 }
+            }
+
+            switch (scene.name)
+            {
+                case "Scene-MainMenu":
+                case "Scene-StageSelect":
+                    if (_prevSceneName != "Scene-MainMenu" && _prevSceneName != "Scene-StageSelect" && _prevSceneName != "Scene-Credits")
+                    {
+                        _audioSource.Stop();
+                        _audioSource.clip = _bgmMenu;
+                        _audioSource.Play();
+                    }
+                    break;
+                case "Scene-Stage1":
+                    _audioSource.Stop();
+                    _audioSource.clip = _bgmStage1;
+                    _audioSource.Play();
+                    break;
+                case "Scene-Stage2":
+                    _audioSource.Stop();
+                    _audioSource.clip = _bgmStage2;
+                    _audioSource.Play();
+                    break;
+                case "Scene-GameOver-Win":
+                case "Scene-GameOver-Lose":
+                    _audioSource.Stop();
+                    _audioSource.clip = null;
+                    break;
             }
         }
 

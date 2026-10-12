@@ -16,10 +16,10 @@ namespace parith
         // Start is called before the first frame update
         private void Start()
         {
-            InitialiseVolumes();
+            InitializeVolumes();
         }
 
-        private void InitialiseVolumes()
+        private void InitializeVolumes()
         {
             SetMasterVolume(m_SoundSettings.MasterVolume);
             SetBGMVolume(m_SoundSettings.BGMVolume);

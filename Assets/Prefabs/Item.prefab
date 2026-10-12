@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd82d24ca862c864d907dbdb228ffad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::parith.ItemBehaviour
+  _sfxPrefab: {fileID: 5334979379568710852, guid: 95fcd1b2c8f64b94cae242f410ea9d63, type: 3}
 --- !u!82 &6214467384979600138
 AudioSource:
   m_ObjectHideFlags: 0
@@ -263,10 +264,10 @@ AudioSource:
   m_GameObject: {fileID: 4701408026911203345}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7419832057656416598, guid: c1c683a6fe27fc64e8cd043f87fe8d45, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

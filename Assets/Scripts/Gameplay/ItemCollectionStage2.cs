@@ -1,4 +1,5 @@
 using StarterAssets;
+using System.Collections;
 using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -13,7 +14,7 @@ namespace parith
         [SerializeField] private ScoreManager _scoreManager;
         [SerializeField] private Timer _timer;
         private GameAppFlowManager _gameManager;
-        [SerializeField] private List<GameObject> collidingItems = new List<GameObject>();
+        private List<GameObject> collidingItems = new List<GameObject>();
         private GameObject currentCollidingItem;
         private StarterAssetsInputs _input;
 
@@ -77,6 +78,7 @@ namespace parith
                             break;
                     }
 
+                    currentCollidingItem.gameObject.GetComponent<ItemBehaviour>().PlaySound();
                     collidingItems.Remove(currentCollidingItem);
                     Destroy(currentCollidingItem);
 

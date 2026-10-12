@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 namespace parith
 {
@@ -18,28 +19,27 @@ namespace parith
             switch (other.gameObject.tag)
             {
                 case "ItemTime+": _timer.AddTime(3);
-                    Destroy(other.gameObject);
                     break;
 
                 case "ItemTime-":
                     _timer.DeductTime(5);
-                    Destroy(other.gameObject);
                     break;
 
                 case "ItemScore+":
                     _scoreManager.AddScore(500);
-                    Destroy(other.gameObject);
                     break;
 
                 case "ItemScore-":
                     _scoreManager.DeductScore(500);
-                    Destroy(other.gameObject);
                     break;
 
                 case "KillBox":
                     _gameManager.LoadScene("Scene-GameOver-Lose");
                     break;
             }
+
+            other.gameObject.GetComponent<ItemBehaviour>().PlaySound();
+            Destroy(other.gameObject);
         }
     }
 }

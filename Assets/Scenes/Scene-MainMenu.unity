@@ -1334,7 +1334,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1104340041}
   - component: {fileID: 1104340040}
-  - component: {fileID: 1104340042}
   - component: {fileID: 1104340043}
   m_Layer: 0
   m_Name: GameAppFlowManager
@@ -1355,6 +1354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011adfcd99ddd5e47b8b4448b3618d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::parith.GameDev3.Chapter6.GameAppFlowManager
+  _audioSource: {fileID: 1104340043}
+  _bgmMenu: {fileID: 8300000, guid: 744368a28efc7e341b8510a2dbc8fe7b, type: 3}
+  _bgmStage1: {fileID: 8300000, guid: b302448ff6d7da64289ba3157ca9e130, type: 3}
+  _bgmStage2: {fileID: 8300000, guid: 9ff61632f824fb34cabe8d404f8a27d4, type: 3}
 --- !u!4 &1104340041
 Transform:
   m_ObjectHideFlags: 0
@@ -1370,22 +1373,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1104340042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104340039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66553595decf5044e96aa15dbc892a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::parith.SoundManager
-  m_SoundSettings: {fileID: 11400000, guid: 598f607b6479a2c45899cfda243bbd50, type: 2}
-  m_SliderMasterVolume: {fileID: 0}
-  m_SliderBGMVolume: {fileID: 0}
-  m_SliderSFXVolume: {fileID: 0}
 --- !u!82 &1104340043
 AudioSource:
   m_ObjectHideFlags: 0
