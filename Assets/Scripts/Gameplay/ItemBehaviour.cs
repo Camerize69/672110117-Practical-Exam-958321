@@ -6,6 +6,7 @@ namespace parith
     public class ItemBehaviour : MonoBehaviour
     {
         [SerializeField] private GameObject _sfxPrefab;
+        [SerializeField] private AudioClip _sfxClip;
         private Transform _self;
         private float _rand;
 
@@ -22,7 +23,7 @@ namespace parith
         public void PlaySound()
         {
             SFXPlayer sfxPlayer = Instantiate(_sfxPrefab, _self.position, Quaternion.identity).GetComponent<SFXPlayer>();
-            sfxPlayer.Initialize(gameObject.GetComponent<AudioSource>().clip);
+            sfxPlayer.Initialize(_sfxClip);
             sfxPlayer.gameObject.SetActive(true);
         }
     }
